@@ -16,7 +16,6 @@ async function getCard(cardName) {
 }
 
 app.post('/card', async(req, res) => {
-
     // getting all cards using Lorcana API using the search query from the user
     const cards = await getCard(req.body.cardName)
     
