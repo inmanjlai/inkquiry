@@ -1,12 +1,23 @@
 html 
   head
     style 
-      include ./cardGrid.css
+      include ./styles/cardGrid.css
     title=title
-  body.card-grid 
-    each card in cards
-      div.card
-        img(src=card['image-urls'].small)
-        p.card-name=card.name 
-        p.card-subtitle=card.subtitle
-    
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(href='https://fonts.googleapis.com/css2?family=Croissant+One&display=swap', rel='stylesheet')
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0")
+  body
+    nav
+      a.logo(href="/")='Inkuiry'
+      form.searchbar(method="POST", action='/cards')
+        input(type='text' placeholder='Search for a card...' name='cardName')
+        button
+          span.material-symbols-rounded='arrow_forward'
+    p.query=title
+    main.card-grid 
+      each card in cards
+        div.card
+          img(src=card['image-urls'].medium)
+          p.card-name=`${card.name} - ${card.subtitle}` 
+      

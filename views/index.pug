@@ -7,21 +7,21 @@ html
         script(defer)
             include ./scripts/dropdown.js
         style
-            include ./styles.css
+            include ./styles/styles.css
         title="Inkuiry"
     body
         nav
-            div.logo
-                a(href="/")
-                    h3="Inkuiry"
+            a.logo(href="/")
+                h3="Inkuiry"
             div.sets
                 h3="Sets"
                     span.material-symbols-rounded="keyboard_arrow_down"
                 div.dropdown
                     each set in sets
-                        a(href="/sets")=set.name
+                        form(method="GET" action=`/sets/${set.code}`)
+                            button=set.name
         main
-            form.searchbar(method="POST" action="/card")
+            form.searchbar(method="POST" action="/cards")
                 input(type="text" placeholder="Search for a card..." name="cardName")
                 button 
                     span.material-symbols-rounded="arrow_forward"
