@@ -24,7 +24,7 @@ app.get('/', async(req, res) => {
 });
 
 async function getCard(cardName) {
-    const req = await fetch(`https://api.lorcana-api.com/strict/${cardName}`)
+    const req = await fetch(`https://api.lorcana-api.com/strict/${cardName.toLowerCase()}`)
     const res = await req.json()
     return res;
 }
