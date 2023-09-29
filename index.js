@@ -16,10 +16,20 @@ async function getCard(cardName) {
 }
 
 app.post('/card', async(req, res) => {
-    console.log(req.body)
-    const card = await getCard(req.body.cardName)
-    console.log(card)
-    res.send("Looking For Card")
+
+    // getting all cards using Lorcana API using the search query from the user
+    const cards = await getCard(req.body.cardName)
+    
+    // create an empty list of cards
+    const allCards = [];
+
+    // for each card returned from the API, we're adding it to our empty list
+    for(let card in cards) {
+        allCards.push(cards[card])
+    }
+
+    // return the cards template, passing in the allCards list to display the cards
+    res.render("cards", { cards: allCards, title: `Search Results for ${req.body.cardName}`})
 })
 
 app.listen("8080", () => {

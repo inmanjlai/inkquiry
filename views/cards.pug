@@ -3,5 +3,7 @@ html
     title=title
   body 
     each card in cards
+      img(src=card['image-urls'].small)
       h2=card.name 
-      p=card.subtitle 
+      h3=card.subtitle 
+      p=card['body-text']
