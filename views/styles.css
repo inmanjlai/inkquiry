@@ -1,0 +1,40 @@
+*:not(dialog) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    min-height: 100vh;
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    padding: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.logo {
+    font-family: 'Croissant One', cursive;
+    font-size: 2rem;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.searchbar { 
+    display: flex;
+    gap: 1rem;
+}
+
+.searchbar input, .searchbar button{
+    padding: 10px 20px;
+    font-size: 24px;
+}
