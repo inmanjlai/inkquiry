@@ -5,12 +5,12 @@ html
         link(href='https://fonts.googleapis.com/css2?family=Croissant+One&display=swap', rel='stylesheet')
         style
             include ./styles.css
-        title="HELLO WORLD"
+        title="Inkuiry"
     body
         nav
             h1.logo="Inkuiry"
         main
-            div.searchbar
-                input(type="text" placeholder="Card Name")
-                input(type="text" placeholder="Card Subtitle")
+            form.searchbar(method="POST" action="/card")
+                input(type="text" placeholder="Card Name" name="cardName")
+                input(type="text" placeholder="Card Subtitle" name="cardSubtitle")
                 button="Search"
