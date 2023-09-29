@@ -4,6 +4,7 @@ const app = express();
 
 app.set('view engine', 'pug')
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use("/public", express.static('public'))
 
 app.get('/', (req, res) => {
     res.render('index', { messageToDisplay: "HEY WELCOME TO PUG" });
