@@ -24,7 +24,18 @@ app.get('/', async(req, res) => {
 });
 
 async function getCard(cardName) {
-    const req = await fetch(`https://api.lorcana-api.com/strict/${cardName.toLowerCase()}`)
+
+    let cardNameSplit = cardName.toLowerCase().split('');
+
+    if (cardNameSplit.length > 1) {
+        cardNameSplit.forEach((letter, idx) => {
+            if(letter == ' ') cardNameSplit[idx] = '_'
+        })
+    }
+
+    let newCardName = cardNameSplit.join('')
+
+    const req = await fetch(`https://api.lorcana-api.com/strict/${newCardName}`)
     const res = await req.json()
     return res;
 }
