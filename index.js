@@ -7,7 +7,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use("/public", express.static('public'))
 
 app.get('/', (req, res) => {
-    res.render('index', { messageToDisplay: "HEY WELCOME TO PUG" });
+    res.render('index', { sets: [ 
+        {name: "The First Chapter"},
+        {name: "Rise of the Floodborn"}
+    ] });
 });
 
 async function getCard(cardName) {
@@ -29,7 +32,10 @@ app.post('/card', async(req, res) => {
     }
 
     // return the cards template, passing in the allCards list to display the cards
-    res.render("cards", { cards: allCards, title: `Search Results for ${req.body.cardName}`})
+    res.render("cards", { 
+        cards: allCards, 
+        title: `Search Results for ${req.body.cardName}`
+    })
 })
 
 app.listen("8080", () => {
