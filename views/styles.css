@@ -127,7 +127,7 @@ main {
     padding: 20px 40px;
     font-size: 24px;
     border-radius: 50px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(58, 58, 58, 0.849);
 }
 
 .searchbar input {
@@ -155,3 +155,4 @@ main {
 .searchbar button:hover {
     transform: translateX(10px);
 }
+

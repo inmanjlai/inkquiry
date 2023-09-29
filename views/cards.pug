@@ -1,9 +1,12 @@
 html 
   head
+    style 
+      include ./cardGrid.css
     title=title
-  body 
+  body.card-grid 
     each card in cards
-      img(src=card['image-urls'].small)
-      h2=card.name 
-      h3=card.subtitle 
-      p=card['body-text']
+      div.card
+        img(src=card['image-urls'].small)
+        p.card-name=card.name 
+        p.card-subtitle=card.subtitle
+    
