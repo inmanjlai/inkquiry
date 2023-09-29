@@ -1,6 +1,12 @@
 {
+  "name": "Inkuiry",
+  "version": "1.0.0",
+  "description": "Search engine for Disney's Lorcana TCG",
+  "author": "Ismail Manjlai & Omar Mohamed",
+  "main": "index.js",
   "scripts":{
-    "dev":"nodemon index.js"
+    "dev":"nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
