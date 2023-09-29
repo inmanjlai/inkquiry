@@ -61,6 +61,10 @@ nav {
   color: black;
 }
 
+.logo-small {
+  display: none;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -103,4 +107,25 @@ nav {
   .card-grid {
     grid-template-columns: repeat(2,1fr);
   }
+
+  .logo {
+    display: none;
+  }
+
+  .searchbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+
+  .searchbar input {
+    min-width: 0px;
+    flex-grow: 1;
+  }
+
+  .logo-small {
+    display: block;
+  }
+
 }

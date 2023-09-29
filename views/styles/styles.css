@@ -146,3 +146,26 @@ main {
     transform: translateX(10px);
 }
 
+@media screen and (max-width: 650px) {
+    .searchbar {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .searchbar input {
+        font-size: 16px;
+        padding: 1rem 2rem;
+    }
+
+    .searchbar input::placeholder {
+        color: white;
+    }
+
+    .searchbar button {
+        padding: 1rem 2rem;
+    }
+
+    .searchbar button:hover {
+        transform: translateX(0);
+    }
+}

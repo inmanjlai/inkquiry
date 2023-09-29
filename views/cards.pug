@@ -10,6 +10,8 @@ html
   body
     nav
       a.logo(href="/")='Inkuiry'
+      a.logo-small(href="/")
+        span.material-symbols-rounded='home'
       form.searchbar(method="POST", action='/cards')
         input(type='text' placeholder='Search for a card...' name='cardName')
         button
